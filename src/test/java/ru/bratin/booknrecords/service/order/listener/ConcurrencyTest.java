@@ -53,6 +53,16 @@ public class ConcurrencyTest {
         assertEquals(10, Math.abs(book.getSells().size() - book.getBuys().size()));
     }
 
+    @Test
+    public void orderBookConcurrentOrderDeletiongTest() {
+        // similar for deletion
+    }
+
+    @Test
+    public void orderBookHolderConcurrentModificationTest() {
+        // similar for BookHolder
+    }
+
     /*
      * returns TRUE if any task run was failed with ConcurrentModificationException
      */
