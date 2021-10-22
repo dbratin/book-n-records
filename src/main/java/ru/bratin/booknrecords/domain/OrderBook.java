@@ -4,9 +4,6 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.BiPredicate;
 
-/*
- Thread unsafe!
- */
 public class OrderBook {
 
     private final AtomicBoolean somebodyWrites = new AtomicBoolean(false);
@@ -143,5 +140,14 @@ public class OrderBook {
             var time = Long.signum(o1.timestamp - o2.timestamp);
             return price == 0 ? Integer.signum(price + time) : price;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "OrderBook{" + '\n' +
+                ", id='" + id + '\'' + '\n' +
+                ", buys=" + buys + '\n' +
+                ", sells=" + sells + '\n' +
+                '}';
     }
 }
